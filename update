@@ -1,0 +1,29 @@
+#!/bin/bash
+# This is just a simple script that makes updating linux a one line command. You don't even need to enter your sudo password!
+
+# Wait for an internet connection to begin update process
+SEC=0
+while ! ping -c 1 -W 1 8.8.8.8 > /dev/null; do
+	clear
+	echo  "Waiting for an internet connection to update..."
+	echo  ""
+	echo  "Seconds: $SEC"
+	((SEC = SEC + 1))
+	sleep 1
+done
+clear
+echo Connected!
+echo ""
+
+# Automatically insert sudo password and start the update process.
+# Replace <sudo password> with the sudo password for your machine.
+echo Updating [1 of 2]
+echo <sudo password> | sudo -S apt update
+echo ""
+echo Upgrading [2 of 2]
+sudo apt-get upgrade -y
+
+
+exit
+exit
+
