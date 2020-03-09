@@ -1,5 +1,6 @@
 #!/bin/bash
-# This is just a simple script that makes updating linux a one line command. You don't even need to enter your sudo password!
+# This is just a simple script that makes updating your Debian based Linux OS a one line command.
+# You don't even need to enter your sudo password!
 
 # Wait for an internet connection to begin update process
 SEC=0
